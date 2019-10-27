@@ -29,10 +29,10 @@ def train(epoch):
 		loss = criterion(f_A, f_B, label)
 		total_loss += loss.item()
 
-		print(f'Epoch {epoch}, batch {batch_index}, loss={loss.item()}')
+		print('Epoch {}, batch {}, loss={}'.format(epoch, batch_index, loss.item()))
 		loss.backward()
 		optimizer.step()
-	print(f'Average epoch loss={total_loss / (len(train_dataset) // 16)}')
+	print('Average epoch loss={}'.format(total_loss / (len(train_dataset) // 16)))
 
 
 for e in range(1, 21):

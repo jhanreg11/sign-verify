@@ -52,4 +52,4 @@ def add_training_data(user, signature, classification):
 
 def save_image(path, signature):
     img = Image.open(BytesIO(base64.b64decode(signature))).resize(IMAGE_SIZE, resample=Image.BILINEAR)
-    img.save(os.path.join(path, 'real', f'{uuid.uuid1().hex}.png'), 'PNG')
+    img.save(os.path.join(path, 'real', '{}.png'.format(uuid.uuid1().hex)), 'PNG')
